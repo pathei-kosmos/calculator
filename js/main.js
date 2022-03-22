@@ -1,3 +1,4 @@
+"use strict";
 const keys = document.querySelectorAll('p');
 const equal = document.querySelector('#equal');
 const result = document.querySelector('h2');
