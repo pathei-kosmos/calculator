@@ -1,14 +1,20 @@
 "use strict";
-const keys = document.querySelectorAll('p');
-const equal = document.querySelector('#equal');
+const calBody = document.querySelector('.cal-body');
 const result = document.querySelector('h2');
 let entries = "";
 
-for (let i = 0; i < keys.length-1; i++) {
-    keys[i].addEventListener('click', (e) => keyPressed(e.target));
-}
-
-equal.addEventListener('click', () => calcul());
+calBody.addEventListener('click', (e) => {
+    console.log(e.target.tagName);
+    if (e.target.id === 'equal' && entries !== "") {
+        calcul();
+    } else if (e.target.id === 'equal' 
+    || e.target.className === "special-keys" 
+    && entries === "") {
+        result.innerText = 0;
+    } else if (e.target.tagName === 'P') {
+        keyPressed(e.target);
+    }
+});
 
 function keyPressed(element) {
     result.innerText = "";
