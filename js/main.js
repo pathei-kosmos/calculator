@@ -4,7 +4,6 @@ const result = document.querySelector('h2');
 let entries = "";
 
 calBody.addEventListener('click', (e) => {
-    console.log(e.target.tagName);
     if (e.target.id === 'equal' && entries !== "") {
         calcul();
     } else if (e.target.id === 'equal' 
