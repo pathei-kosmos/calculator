@@ -23,6 +23,10 @@ function keyPressed(element) {
 }
 
 function calcul() {
-    result.innerText = eval(entries);
+    let res = eval(entries);
+    if(!Number.isSafeInteger(res)) {
+        res = res.toFixed(4);
+    };
+    result.innerText = res;
     entries = "";
 }
